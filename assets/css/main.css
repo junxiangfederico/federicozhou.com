@@ -99,7 +99,7 @@ input, select, textarea {
 		}
 
 	body, input, select, textarea {
-		color: #fff;
+		color: rgb(255, 255, 255);
 		font-family: 'Source Sans Pro', sans-serif;
 		font-size: 15pt;
 		font-weight: 300 !important;
@@ -153,6 +153,7 @@ input, select, textarea {
 		.icon.brands:before {
 			font-family: 'Font Awesome 5 Brands';
 		}
+
 
 /* Wrapper */
 
@@ -530,11 +531,12 @@ input, select, textarea {
 		}
 	}
 
+	/* Cambiare qua per accelerare la comparsa dell'homepage*/
 	#header {
-		-moz-animation: header 1s 2.25s forwards;
-		-webkit-animation: header 1s 2.25s forwards;
-		-ms-animation: header 1s 2.25s forwards;
-		animation: header 1s 2.25s forwards;
+		-moz-animation: header 1s 1.2s forwards;
+		-webkit-animation: header 1s 1.2s forwards;
+		-ms-animation: header 1s 1.2s forwards;
+		animation: header 1s 1.2s forwards;
 		-moz-backface-visibility: hidden;
 		-webkit-backface-visibility: hidden;
 		-ms-backface-visibility: hidden;
@@ -1078,4 +1080,20 @@ input, select, textarea {
 
 		#header nav {
 			padding: 0 1em;
-		} }
+		}
+	/* Wordpress imports */
+		wpbutton {
+			line-height: 1;
+			cursor: pointer;
+			font-weight: 700;
+			/* font-family: "PT Sans",-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif; */
+			font-family: var(--font-base,"PT Sans",-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif);
+			font-size: 1rem;
+			background-color: var(--wp--preset--color--primary);
+			border-radius: 5px;
+			border-width: 0;
+			text-decoration: none;
+			padding: 16px 24px;
+		}
+	
+	}

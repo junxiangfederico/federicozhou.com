@@ -1,5 +1,5 @@
 # federicozhou.me
-Welcome to my personal website, it is still a work in progress, but you are [welcome to take a look aroud](federicozhou.me)
+Welcome to my personal website, it is still a work in progress, but you are [welcome to take a look aroud]
 
 # About Me
 I am a student at "Università degli Studi di Milano", studying "Computer Science". 

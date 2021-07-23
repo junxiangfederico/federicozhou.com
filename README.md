@@ -1,4 +1,4 @@
-# federicozhou.me
+# Federico Zhou's personal website
 Welcome to my personal website, it is still a work in progress, but you are welcome to take a look around here: https://federicozhou.me
 
 # About Me

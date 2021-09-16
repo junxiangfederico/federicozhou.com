@@ -368,6 +368,7 @@ input, select, textarea {
 /* Main */
 
 	#main {
+
 		height: 100%;
 		left: 0;
 		position: fixed;
@@ -385,6 +386,24 @@ input, select, textarea {
 			width: 1px;
 		}
 
+		
+	#mainblack{
+		height: 100%;
+		left: 0;
+		position: fixed;
+		text-align: center;
+		top: 0;
+		width: 100%;
+		background-color:#121212;
+	}
+		#mainblack_before{
+			content: '';
+			display: inline-block;
+			height: 100%;
+			margin-right: 0;
+			vertical-align: middle;
+			width: 1px;
+		}
 /* Header */
 
 	@-moz-keyframes header {
@@ -670,7 +689,7 @@ input, select, textarea {
 				border: 0;
 				display: inline-block;
 			}
-
+				/* buttons properties, darkmode and lightmode */
 				#header nav a:before {
 					-moz-transition: all 0.2s ease-in-out;
 					-webkit-transition: all 0.2s ease-in-out;
@@ -1095,5 +1114,6 @@ input, select, textarea {
 			text-decoration: none;
 			padding: 16px 24px;
 		}
-	
+		
+	/* darkmode */
 	}

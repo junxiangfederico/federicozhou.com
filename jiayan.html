@@ -48,6 +48,44 @@ img {
   -webkit-user-select: none;
 }
 
+
+a{
+  display: block;
+  width: 200px;
+  height: 80px;
+  line-height: 40px;
+  font-size: 18px;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #333;
+  border: 2px solid #333;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all .35s;
+}
+
+
+a:after{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background:cornflowerblue;
+  transition: all .35s;
+}
+
+a:hover{
+  color: black;
+}
+
+a:hover:after{
+  width: 100%;
+}
+
+
 /* Position the "next button" to the right */
 .next {
   right: 0;
@@ -182,9 +220,13 @@ img {
   </div>
 
     
+  <div class="wrapper">
+    
   <a class="prev" style="opacity: 0.2; background-color:black;" onclick="plusSlides(-1)">❮</a>
   <a class="next" style="opacity: 0.2; background-color:black;" onclick="plusSlides(1)">❯</a>
 
+
+</div>
 
 
   <!-- 

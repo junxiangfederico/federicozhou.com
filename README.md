@@ -11,5 +11,3 @@ I am a student at "Università degli Studi di Milano", studying "Computer Scienc
 I can speak Chinese, Italian, English and a bit of French.
 I've received the HSK 5 certification for the Chinese Language,
 and both the "KET" and "Advanced“ certification by Cambridge in English.
-
-I am 

@@ -23,7 +23,9 @@ section, summary, time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;}
+	vertical-align: baseline;
+	overflow: scroll;
+}
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -76,6 +78,7 @@ input, select, textarea {
 
 	html {
 		box-sizing: border-box;
+		overflow: scroll;
 	}
 
 	*, *:before, *:after {
@@ -84,6 +87,7 @@ input, select, textarea {
 
 	body {
 		background: #fff;
+		overflow: scroll;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -1164,4 +1168,18 @@ input, select, textarea {
 			margin-right: auto;
 		}
 	/* darkmode */
+	}
+
+	.container { 
+		width: 750px; 
+		height: 750px;
+	 }
+	.outer-container{
+		display: flex;  
+		flex-direction: row;
+	}
+  
+	.container2 {
+		width: 750px; 
+		height: 750px;
 	}

@@ -647,10 +647,10 @@ input, select, textarea {
 				}
 
 				#header nav li:nth-child(2) {
-					-moz-animation-delay: 1.2s;
-					-webkit-animation-delay: 1.2s;
-					-ms-animation-delay: 1.2s;
-					animation-delay: 1.2s;
+					-moz-animation-delay: 1.3s;
+					-webkit-animation-delay: 1.3s;
+					-ms-animation-delay: 1.3s;
+					animation-delay: 1.3s;
 				}
 
 				#header nav li:nth-child(3) {
@@ -661,17 +661,17 @@ input, select, textarea {
 				}
 
 				#header nav li:nth-child(4) {
-					-moz-animation-delay: 1.4s;
-					-webkit-animation-delay: 1.4s;
-					-ms-animation-delay: 1.4s;
-					animation-delay: 1.4s;
+					-moz-animation-delay: 1.45s;
+					-webkit-animation-delay: 1.45s;
+					-ms-animation-delay: 1.45s;
+					animation-delay: 1.45s;
 				}
 
 				#header nav li:nth-child(5) {
-					-moz-animation-delay: 1.4s;
-					-webkit-animation-delay: 1.4s;
-					-ms-animation-delay: 1.4s;
-					animation-delay: 1.4s;
+					-moz-animation-delay: 1.5s;
+					-webkit-animation-delay: 1.5s;
+					-ms-animation-delay: 1.5s;
+					animation-delay: 1.5s;
 				}
 
 				#header nav li:nth-child(6) {

@@ -551,10 +551,10 @@ input, select, textarea {
 
 	/* Cambiare qua per accelerare la comparsa dell'homepage*/
 	#header {
-		-moz-animation: header 1s 1.2s forwards;
-		-webkit-animation: header 1s 1.2s forwards;
-		-ms-animation: header 1s 1.2s forwards;
-		animation: header 1s 1.2s forwards;
+		-moz-animation: header 0.5s 0.s forwards;
+		-webkit-animation: header 0.5s 0.2s forwards;
+		-ms-animation: header 0.5s 0.2s forwards;
+		animation: header 0.5s 0.2s forwards;
 		-moz-backface-visibility: hidden;
 		-webkit-backface-visibility: hidden;
 		-ms-backface-visibility: hidden;
@@ -640,38 +640,38 @@ input, select, textarea {
 			}
 
 				#header nav li:nth-child(1) {
-					-moz-animation-delay: 2.5s;
-					-webkit-animation-delay: 2.5s;
-					-ms-animation-delay: 2.5s;
-					animation-delay: 2.5s;
+					-moz-animation-delay: 1.2s;
+					-webkit-animation-delay: 1.2s;
+					-ms-animation-delay: 1.2s;
+					animation-delay: 1.2s;
 				}
 
 				#header nav li:nth-child(2) {
-					-moz-animation-delay: 2.75s;
-					-webkit-animation-delay: 2.75s;
-					-ms-animation-delay: 2.75s;
-					animation-delay: 2.75s;
+					-moz-animation-delay: 1.2s;
+					-webkit-animation-delay: 1.2s;
+					-ms-animation-delay: 1.2s;
+					animation-delay: 1.2s;
 				}
 
 				#header nav li:nth-child(3) {
-					-moz-animation-delay: 3s;
-					-webkit-animation-delay: 3s;
-					-ms-animation-delay: 3s;
-					animation-delay: 3s;
+					-moz-animation-delay: 1.4s;
+					-webkit-animation-delay: 1.4s;
+					-ms-animation-delay: 1.4s;
+					animation-delay: 1.4s;
 				}
 
 				#header nav li:nth-child(4) {
-					-moz-animation-delay: 3.25s;
-					-webkit-animation-delay: 3.25s;
-					-ms-animation-delay: 3.25s;
-					animation-delay: 3.25s;
+					-moz-animation-delay: 1.4s;
+					-webkit-animation-delay: 1.4s;
+					-ms-animation-delay: 1.4s;
+					animation-delay: 1.4s;
 				}
 
 				#header nav li:nth-child(5) {
-					-moz-animation-delay: 3.5s;
-					-webkit-animation-delay: 3.5s;
-					-ms-animation-delay: 3.5s;
-					animation-delay: 3.5s;
+					-moz-animation-delay: 1.4s;
+					-webkit-animation-delay: 1.4s;
+					-ms-animation-delay: 1.4s;
+					animation-delay: 1.4s;
 				}
 
 				#header nav li:nth-child(6) {

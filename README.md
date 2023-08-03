@@ -1,9 +1,9 @@
 # Federico Zhou's repository
 Welcome to my personal repository: here you can find the assets for my personal website, and for my restaurant's website.
 
-It is still work in progress, but you are welcome to take a look around here: https://federicozhou.me , or if you prefer it in dark mode, here: https://federicozhou.me/index_black.html
+It is still work in progress, but you are welcome to take a look around here: https://federicozhou.com , or if you prefer it in dark mode, here: https://federicozhou.com/index_black.html
 
-You can also find the website for the restaurant my family manages at https://federicozhou.me/jiayan_landing.html
+You can also find the website for the restaurant my family manages at https://federicozhou.com/jiayan_landing.html
 
 
 # About Me

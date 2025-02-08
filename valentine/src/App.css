@@ -1,3 +1,9 @@
+/* Ensure html and body are full height */
+html, body {
+  height: 100%;
+  margin: 0;  /* Remove default margins */
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -5,15 +11,27 @@
   text-align: center;
 }
 
+/* Override styles for #map */
+#map {
+  height: 100vh; /* Make sure the map takes up the full screen height */
+  width: 100vw;  /* Ensure it stretches across the full width */
+  position: absolute; /* Position it absolutely within the page */
+  top: 0; /* Align the map to the top of the page */
+  left: 0; /* Align the map to the left of the page */
+}
+
+/* Styles for other elements */
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -32,15 +50,6 @@
     animation: logo-spin infinite 20s linear;
   }
 }
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
 
 button {
   background-color: #f01a7a; /* Pink background */

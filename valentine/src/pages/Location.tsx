@@ -1,46 +1,46 @@
-import { useEffect, useRef } from "react";
-import mapboxgl, { LngLatLike } from "mapbox-gl";
-import { useNavigate } from "react-router-dom";
-
-mapboxgl.accessToken =  "a token here" // Replace with your token
+import { useEffect } from "react";
+import mapboxgl from "mapbox-gl";
+import 'mapbox-gl/dist/mapbox-gl.css'; 
 
 const visitedPlaces = [
-  { name: "Paris", coords: [2.3522, 48.8566] },
-  { name: "Rome", coords: [12.4964, 41.9028] },
-  { name: "London", coords: [-0.1276, 51.5074] }
+  { name: "London", description: "Where it all started", coords: [-0.1276, 51.5074] },
+  { name: "Milan", description: "So little time, so many memories", coords: [9.1824, 45.4685] },
+  { name: "Florence", description: "Sunsets and sunrise, they don't compare to your smile",  coords: [11.2558, 43.7696] },
+  { name: "Tallinn", description: "Where it all just made sense", coords: [24.7536, 59.437] },
 ];
 
-const MapPage = () => {
-  const mapContainerRef = useRef<HTMLDivElement>(null);
-  const navigate = useNavigate();
+const Location = () => {
+  const mapboxToken = import.meta.env.VITE_MAPBOX_TOKEN;
 
   useEffect(() => {
-    if (!mapContainerRef.current) return;
+    mapboxgl.accessToken = mapboxToken;
 
     const map = new mapboxgl.Map({
-      container: mapContainerRef.current,
-      style: "mapbox://styles/mapbox/streets-v12",
-      zoom: 4
+      container: "map",
+      style: "mapbox://styles/mapbox/outdoors-v12",
+      center: [11.2558, 43.7696],
+      pitch: 30,
+      zoom: 3,
     });
 
-    // Add markers for visited places
     visitedPlaces.forEach((place) => {
+      console.log(`Adding marker for: ${place.name}`);
       new mapboxgl.Marker()
-        .setLngLat(place.coords as LngLatLike)
-        .setPopup(new mapboxgl.Popup().setHTML(`<h3>${place.name}</h3>`))
+        .setLngLat(place.coords as [number, number])
+        .setPopup(new mapboxgl.Popup().setHTML(`
+          <h3>${place.name}</h3>
+          <p>${place.description}</p>
+        `))
         .addTo(map);
     });
 
-    return () => map.remove(); // Cleanup on unmount
-  }, []);
+    map.on('style.load', () => {
+      map.setConfigProperty('basemap', 'show3dObjects', true);
+    })
+    return () => map.remove();
+  }, [mapboxToken]);
 
-  return (
-    <div>
-      <h1>Our Memories Together 💖</h1>
-      <div ref={mapContainerRef} style={{ width: "100%", height: "500px" }} />
-      <button onClick={() => navigate("/")}>Back to Home</button>
-    </div>
-  );
+  return <div id="map" style={{ height: "100vh", width: "100vw" }}></div>;
 };
 
-export default MapPage;
+export default Location;

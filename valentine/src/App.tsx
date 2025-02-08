@@ -56,7 +56,7 @@ const Home = () => {
         <button 
           className="btn btn-primary mt-4" 
           onClick={() => navigate("/map")}
-          style={{ backgroundColor: 'red', borderColor: 'red' }}
+          style={{ backgroundColor: 'white', borderColor: 'red', color: 'black', fontSize: '20px', fontFamily: 'Gill Sans'}}
         >
           Let's get started
         </button>

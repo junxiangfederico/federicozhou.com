@@ -20,7 +20,7 @@ html, body {
 
 h1 {
   font-family: 'cursive';
-  font-size: 10rem;
+  font-size: 3rem;
   color: #f1c6e7;
   font-weight: bold;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
@@ -29,11 +29,8 @@ h1 {
 button {
   background-color: #f01a7a; /* Pink background */
   color: white;
-  font-size: 18px;
   font-weight: bold;
-  padding: 15px 30px;
-  border: none;
-  border-radius: 30px;
+  border: solid;
   cursor: pointer;
   transition: all 0.3s ease;
 }

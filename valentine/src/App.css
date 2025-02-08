@@ -76,3 +76,7 @@ button:active {
 button:focus {
   outline: none; /* Remove focus outline */
 }
+
+.mapboxgl-popup-content {
+  background-color: transparent !important;
+}

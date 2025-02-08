@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import mapboxgl from "mapbox-gl";
 import 'mapbox-gl/dist/mapbox-gl.css'; 
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const visitedPlaces = [
   { name: "London", description: "Where it all started", coords: [-0.1276, 51.5074] },
@@ -27,10 +28,22 @@ const Location = () => {
       console.log(`Adding marker for: ${place.name}`);
       new mapboxgl.Marker()
         .setLngLat(place.coords as [number, number])
-        .setPopup(new mapboxgl.Popup().setHTML(`
-          <h3>${place.name}</h3>
-          <p>${place.description}</p>
-        `))
+        .setPopup(
+          new mapboxgl.Popup({ offset: 25, closeOnMove: true})
+            .setHTML(`
+              <div class="container" style="background-color: rgb(188, 220, 252); border-radius: 2px; padding: 10px; max-width: 150px;">
+                <b class="text-center d-block" style="font-size: 13px; font-weight: 600;">${place.name}</b>
+                <p class="text-center" style="font-size: 9px; line-height: 1.5;">${place.description}</p>
+              </div>
+            `)
+        )
+        .on('open', function () {
+          // Ensure we cast to HTMLElement to access style property
+          const popupContent = document.querySelector('.mapboxgl-popup-content') as HTMLElement;
+          if (popupContent) {
+            popupContent.style.backgroundColor = 'transparent';
+          }
+        })
         .addTo(map);
     });
 

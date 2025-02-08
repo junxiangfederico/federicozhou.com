@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import "./App.css";
 import Location from "./pages/Location";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import heart_cat from "../public/heart_cat.gif";
 
 const loveMessages: string[] = [
   "I love you ❤️", "Ti amo 💕", "Je t’aime 💖", "Te quiero 💘",
@@ -30,10 +32,35 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Happy Valentine's day Amy! 💙</h1>
-      <img src="/heart_cat.gif" alt="Cute heart cat" width="300" />
-      <br></br>
-      <button onClick={() => navigate("/map")}>Let's get started</button>
+      <div className="text-center">
+        <h1 
+          style={{ 
+            fontFamily: 'cursive', 
+            fontSize: '4rem', 
+            color: '#ffffff', 
+            textAlign: 'center', 
+            fontWeight: 'bold', 
+            textShadow: '2px 2px 5px rgba(0, 0, 0, 0.3)' 
+          }}
+        >
+          Happy Valentine's day Amy! 💙
+        </h1>
+        <br />
+        <img 
+          src={heart_cat} 
+          alt="Cute heart cat" 
+          width="300" 
+          key={index} // Add a key to prevent unnecessary re-renders
+        />
+        <br />
+        <button 
+          className="btn btn-primary mt-4" 
+          onClick={() => navigate("/map")}
+          style={{ backgroundColor: 'red', borderColor: 'red' }}
+        >
+          Let's get started
+        </button>
+      </div>
     </div>
   );
 };

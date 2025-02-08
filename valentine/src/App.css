@@ -1,59 +1,34 @@
 /* Ensure html and body are full height */
 html, body {
-  height: 100%;
-  margin: 0;  /* Remove default margins */
+  height: 100%;  /* Full height */
+  width: 100%;
+  margin: 0;     /* Remove default margins */
+  padding: 0;    /* Remove default padding */
+  overflow: hidden; /* Prevent scrolling */
 }
 
+/* Ensure #root fills the entire height */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  height: 100%;  /* Full height */
+  width: 100%;
+  display: flex; /* Use flexbox to center content */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  text-align: center; /* Center text */
+  background-color: #f067ce;  /* Set the background color */
 }
 
-/* Override styles for #map */
-#map {
-  height: 100vh; /* Make sure the map takes up the full screen height */
-  width: 100vw;  /* Ensure it stretches across the full width */
-  position: absolute; /* Position it absolutely within the page */
-  top: 0; /* Align the map to the top of the page */
-  left: 0; /* Align the map to the left of the page */
-}
-
-/* Styles for other elements */
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+h1 {
+  font-family: 'cursive';
+  font-size: 10rem;
+  color: #f1c6e7;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 button {
   background-color: #f01a7a; /* Pink background */
-  color: white; /* White text */
+  color: white;
   font-size: 18px;
   font-weight: bold;
   padding: 15px 30px;
@@ -65,18 +40,23 @@ button {
 
 button:hover {
   background-color: #ff4c8f; /* Darker pink on hover */
-  transform: scale(1.1); /* Slightly larger on hover */
+  transform: scale(1.1);
 }
 
 button:active {
   background-color: #ff3366; /* Even darker pink on click */
-  transform: scale(0.9); /* Slightly smaller on click */
+  transform: scale(0.9);
 }
 
 button:focus {
-  outline: none; /* Remove focus outline */
+  outline: none;
 }
 
-.mapboxgl-popup-content {
-  background-color: transparent !important;
+/* Ensure #map takes full screen */
+#map {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
 }

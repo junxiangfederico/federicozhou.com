@@ -95,7 +95,6 @@ export const visitedPlaces = [
     { name: "Airport", description: "The hardest of goodbyes", coords: [59.416708762134675, 24.799166807425124] },
 
     // Finland
-
     { name: "Helsinki", description: "It's just churches !", coords: [60.16989258993078, 24.938581581131107] },
     { name: "Church !", description: "Looks badass", coords: [60.17069240414722, 24.952346885265012], image: church },
     { name: "Kiasma", description: "Architecture students !", coords: [60.171591075033184, 24.937239908019286], image: museum },
@@ -107,10 +106,9 @@ export const visitedPlaces = [
     { name: "Port", description: "The best thing about Finland, the ride back to Tallinn", coords: [60.15039512968832, 24.91477031261563] },
 
     // Syracuse
-    { name: "Can't wait too see you here, Darling", description: "❤️", coords: [43.041448415145, -76.1314511885353] },
+    { name: "Can't wait too see you here, Darling", description: "❤️", coords: [43.041448415145, -76.1314511885353] }
     // { name: "", description: "", coords: [] },
     // { name: "", description: "", coords: [] },
     // { name: "", description: "", coords: [] },
     // { name: "", description: "", coords: [] },
-
 ];

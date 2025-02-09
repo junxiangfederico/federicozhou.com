@@ -1,7 +1,7 @@
 import ending from "../../../public/ending.gif"
 import { useNavigate } from "react-router-dom";
 
-const Ending = () => {
+export const Ending = () => {
     const navigate = useNavigate();
 
     return (

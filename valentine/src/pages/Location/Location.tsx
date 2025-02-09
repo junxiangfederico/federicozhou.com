@@ -157,7 +157,8 @@ const Location = () => {
           onClick={() => {
             setIsEverythingVisibile((prev) => {
               const newState = !prev;
-              openEverything(markers, newState);
+              setIsEverythingVisibile(newState);
+              openEverything(markers, isEverythingVisible);
               return newState;
             });
           }}

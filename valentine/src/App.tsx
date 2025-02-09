@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import "./App.css";
-import Location from "./pages/location/Location";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import heart_cat from "../public/heart_cat.gif";
 import Ending from "./pages/ending/Ending";
+import Location from "./pages/location/Location";
 
 const loveMessages: string[] = [
   "I love you ❤️", "Ti amo 💕", "Je t’aime 💖", "Te quiero 💘",

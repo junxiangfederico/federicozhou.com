@@ -4,15 +4,25 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { createMarkers, focusOnMarker } from "./utils/LocationUtils";
 import { visitedPlaces } from "./data/Locations";
+import { useNavigate } from "react-router-dom";
 
 const Location = () => {
+  const navigate = useNavigate();
   const mapboxToken = import.meta.env.VITE_MAPBOX_TOKEN;
   const googleToken = import.meta.env.VITE_GOOGLE_API_TOKEN;
   const [currentIndex, setCurrentIndex] = useState(0);
   const [map, setMap] = useState<mapboxgl.Map | null>(null);
   const [markers, setMarkers] = useState<mapboxgl.Marker[]>([]);
-  const [isEverythingVisible, setIsEverythingVisibile] = useState(false);
+  const [isEverythingVisible, setIsEverythingVisibile] = useState(true);
   const [isButtonVisible, setIsButtonVisible] = useState(false);
+  const [message, setMessage] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (message) {
+      const timer = setTimeout(() => setMessage(null), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [message]);
 
   useEffect(() => {
     mapboxgl.accessToken = mapboxToken;
@@ -126,44 +136,76 @@ const Location = () => {
 
   return (
     <div style={{ position: "relative", height: "100vh", width: "100vw" }}>
-      <div id="map" style={{ height: "100%", width: "100%" }}></div>
-      <div style={{ 
-        position: "absolute", 
-        bottom: "20px",
-        left: "50%",
-        transform: "translateX(-50%)",
-        zIndex: 1,
-        display: "flex",
-        gap: "40px",
-      }}>
-        <button 
-          style={{ visibility: isButtonVisible ? "visible" : "hidden" }}
-          onClick={goToFirst}>
+    <div id="map" style={{ height: "100%", width: "100%" }}></div>
+
+    {message && (
+      <div
+        style={{
+          position: "absolute",
+          bottom: "90px",
+          left: "50%",
+          transform: "translateX(-50%)",
+          zIndex: 2,
+          padding: "10px 20px",
+          backgroundColor: "rgba(255, 255, 255, 0.9)",
+          borderRadius: "10px",
+          textAlign: "center",
+          fontSize: "16px",
+          fontWeight: "bold",
+          color: "#333",
+          maxWidth: "80%",
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          textOverflow: "ellipsis",
+          transition: "opacity 0.5s ease-in-out",
+        }}
+      >
+        {message}
+      </div>
+    )}
+  
+      {/* Buttons Bar */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: "20px",
+          left: "50%",
+          transform: "translateX(-50%)",
+          zIndex: 1,
+          display: "flex",
+          gap: "20px",
+          flexWrap: "nowrap",
+          overflowX: "auto",
+          whiteSpace: "nowrap",
+          padding: "10px",
+          backgroundColor: "rgba(0, 0, 0, 0.5)",
+          borderRadius: "10px",
+        }}
+      >
+        <button onClick={() => { setMessage("Going to first place!"); goToFirst(); }}>
           Go to first
         </button>
-        <button onClick={moveBackward}>
+        <button onClick={() => { setMessage("Moving back..."); moveBackward(); }}>
           Back
         </button>
-        <button onClick={moveForward}>
+        <button onClick={() => { setMessage("Moving forward..."); moveForward(); }}>
           Forward
         </button>
-        <button 
-          style={{ visibility: isButtonVisible ? "visible" : "hidden" }}
-          onClick={goToLast}>
+        <button onClick={() => { setMessage("Going to last place!"); goToLast(); }}>
           Go to last
         </button>
-        <button
-          style={{ visibility: isButtonVisible ? "visible" : "hidden" }}
-          onClick={() => {
-            setIsEverythingVisibile((prev) => {
-              const newState = !prev;
-              setIsEverythingVisibile(newState);
-              openEverything(markers, isEverythingVisible);
-              return newState;
-            });
-          }}
-        >
+        <button onClick={() => {
+          setIsEverythingVisibile((prev) => {
+            const newState = !prev;
+            setMessage("Toggling all popups !");
+            openEverything(markers, isEverythingVisible);
+            return newState;
+          });
+        }}>
           Toggle everything
+        </button>
+        <button onClick={() => navigate("/")}>
+          Go back home
         </button>
       </div>
     </div>

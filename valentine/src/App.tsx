@@ -71,6 +71,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/map" element={<Location />} />
+        <Route path="/next" element={<Location />} />
       </Routes>
     </Router>
   );

@@ -31,16 +31,6 @@ const Home = () => {
     document.title = loveMessages[index];
   }, [index]);
 
-  // Create hearts dynamically
-  const createHearts = () => {
-    const heartCount = 100; // You can adjust the number of hearts
-    let hearts = [];
-    for (let i = 0; i < heartCount; i++) {
-      hearts.push(<div key={i} className="heart" style={{ top: `${Math.random() * 100}%`, left: `${Math.random() * 100}%`, animationDelay: `${Math.random() * 5}s` }} />);
-    }
-    return hearts;
-  };
-
   return (
     <div>
       <div className="text-center">
@@ -51,7 +41,7 @@ const Home = () => {
             color: '#ffffff',
             textAlign: 'center',
             fontWeight: 'bold',
-            textShadow: '2px 2px 5px rgba(0, 0, 0, 0.3)',
+            textShadow: '2px 2px 5px rgba(0, 0, 0, 0.3)'
           }}
         >
           Happy Valentine's day Amy! 💙
@@ -72,9 +62,6 @@ const Home = () => {
           Let's get started
         </button>
       </div>
-
-      {/* Render the hearts in the background */}
-      {createHearts()}
     </div>
   );
 };

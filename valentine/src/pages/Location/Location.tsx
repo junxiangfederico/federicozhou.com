@@ -6,7 +6,7 @@ import { createMarkers, focusOnMarker } from "./utils/LocationUtils";
 import { visitedPlaces } from "./data/Locations";
 import { useNavigate } from "react-router-dom";
 
-const Location = () => {
+export const Location = () => {
   const navigate = useNavigate();
   const mapboxToken = import.meta.env.VITE_MAPBOX_TOKEN;
   const googleToken = import.meta.env.VITE_GOOGLE_API_TOKEN;

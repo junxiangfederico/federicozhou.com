@@ -35,7 +35,6 @@ export const Ending = () => {
                     >
                     Go back home
                     </button>
-
                 </div>
                 <br></br>
             </div>

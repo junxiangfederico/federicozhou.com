@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import "./App.css";
-import Location from "./pages/Location";
+import Location from "./pages/Location/Location";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import heart_cat from "../public/heart_cat.gif";
 

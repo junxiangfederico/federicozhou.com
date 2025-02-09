@@ -27,6 +27,7 @@ import florence from "/florence.jpg";
 import bowl from "/IMG_7112.JPG";
 import duomo from "/duomo.JPG";
 import piadineria from "/piadineria.png"
+import stephen from "/stephen.png";
 
 export const visitedPlaces = [
     // London
@@ -78,21 +79,19 @@ export const visitedPlaces = [
 
     // Tallinn
     { name: "Tallinn", description: "Where it all just made sense", coords: [59.43693717805752, 24.756926457463138], image: tallinn },
-    { name: "Home", description: "Tiramisu', napping, hugging and kissing, so many memories !", coords: [59.42545741058523, 24.73752022371597], image: home},
-    { name: "Home", description: "Very demure, very mindful", coords: [59.42549741058523, 24.73732022371597], image: disaster},
     { name: "Möku", description: "Your first espresso martini !", coords: [59.44035875342937, 24.728765015923983], image: moku },
     { name: "F-Hoone", description: "", coords: [59.43957005140575, 24.729089782322166], image: fhoone },
-    { name: "Tallinn Port", description: "Finland, but why !", coords: [59.44472012421977, 24.761987646695943] },
-    { name: "Baltic sea", description: "Sneaky pics, lots of love", coords: [59.603915346469236, 24.683187345444104], image: sneaky },
     { name: "Pho lunch", description: "Polite good", coords: [59.431927262600446, 24.746391729415276] },
     { name: "Dumplings were... interesting", description: "At least the cake was good 🥹", coords: [59.42384846094173, 24.74277140253224], image: cake },
     { name: "Viru bog", description: "In the woods, with the best company", coords: [59.46502796416673, 25.63888110210818], image: bogAmy},
     { name: "Viru bog", description: "Sunset, snow, and the most beautiful smile", coords: [59.4687343982517, 25.655060187001272], image: bogAmy2},
     { name: "Viru bog", description: "My favourite picture of us !", coords: [59.47016580936945, 25.66044956459359], image: together },
     { name: "Steaks and smiles", description: "FOOOOOOOOOOD", coords: [59.442558820639704, 24.733699252171956], image: steak },
-    { name: "Stephen", description: "Stephen", coords: [59.4425425391391, 24.777939874947908] },
+    { name: "Stephen", description: "Stephen", coords: [59.43503176510839, 24.740164098726197], image: stephen },
     { name: ".... WHYYYYYy", description: "Really ? ...", coords: [59.42584387726853, 24.736639796201782], image: butWhy },
-    { name: "Airport", description: "The hardest of goodbyes", coords: [59.416708762134675, 24.799166807425124] },
+    { name: "Home", description: "Tiramisu', napping, hugging and kissing, so many memories !", coords: [59.42545741058523, 24.73752022371597], image: home},
+    { name: "Home", description: "Very demure, very mindful", coords: [59.42549741058523, 24.73732022371597], image: disaster},
+    { name: "Tallinn Port", description: "Finland, but why !", coords: [59.44472012421977, 24.761987646695943] },
 
     // Finland
     { name: "Helsinki", description: "It's just churches !", coords: [60.16989258993078, 24.938581581131107] },
@@ -104,6 +103,8 @@ export const visitedPlaces = [
     { name: "St. John's Church", description: "Intimidating looking church", coords: [60.16177778734054, 24.945196159558023] },
     { name: "Reaktor", description: "Sneaking into places...", coords: [60.16976663290294, 24.948969409469917] },
     { name: "Port", description: "The best thing about Finland, the ride back to Tallinn", coords: [60.15039512968832, 24.91477031261563] },
+    { name: "Baltic sea", description: "Sneaky pics, lots of love", coords: [59.603915346469236, 24.683187345444104], image: sneaky },
+    { name: "Airport", description: "The hardest of goodbyes", coords: [59.416708762134675, 24.799166807425124] },
 
     // Syracuse
     { name: "Can't wait too see you here, Darling", description: "❤️", coords: [43.041448415145, -76.1314511885353] }

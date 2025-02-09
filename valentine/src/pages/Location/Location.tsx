@@ -21,9 +21,13 @@ const Location = () => {
       pitch: 30,
       zoom: 5,
     });
-
-    const markersArray = createMarkers(mapInstance, visitedPlaces, googleToken);
-    setMarkers(markersArray);
+  
+    const loadMarkers = async () => {
+      const markersArray = await createMarkers(mapInstance, visitedPlaces, googleToken);
+      setMarkers(markersArray);
+    };
+  
+    loadMarkers();
     setMap(mapInstance);
 
     return () => mapInstance.remove();

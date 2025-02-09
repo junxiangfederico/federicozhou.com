@@ -21,9 +21,15 @@ const useNavigation = ({ markers, visitedPlaces, map }: UseNavigationProps) => {
       setCurrentIndex(newIndex);
       focusOnMarker(map!, markers[newIndex], visitedPlaces[newIndex].coords, markers);
     }
+
+    console.log("Reached the end");
   };
 
   const moveBackward = () => {
+    if (currentIndex == 0) {
+      console.log("Nothing before this, sorry");
+    }
+
     if (currentIndex > 0) {
       const newIndex = currentIndex - 1;
       setCurrentIndex(newIndex);

@@ -3,9 +3,8 @@ import mapboxgl from "mapbox-gl";
 export const createMarkers = async (map: mapboxgl.Map, visitedPlaces: any[], googleToken: string) => {
   const markers: mapboxgl.Marker[] = [];
 
-  // Function to check if Google Street View image is valid
   const checkGoogleImage = async (lat: number, lng: number, token: string): Promise<string | null> => {
-    const googleImageUrl = `https://maps.googleapis.com/maps/api/streetview?size=600x400&location=${lat},${lng}&fov=90&heading=0&pitch=0&key=${token}`;
+    const googleImageUrl = `https://maps.googleapis.com/maps/api/streetview?size=600x400&location=${lat},${lng}&key=${token}`;
 
     try {
       const response = await fetch(googleImageUrl, { method: "HEAD" }); // Check if image exists
@@ -20,17 +19,16 @@ export const createMarkers = async (map: mapboxgl.Map, visitedPlaces: any[], goo
     }
   };
 
-  // Process all places asynchronously
   for (const place of visitedPlaces) {
     console.log(`Processing: ${place.name}`);
 
-    // Prioritize `place.image`, otherwise fetch Google image
-    const imageUrl = place.image ?? await checkGoogleImage(place.coords[1], place.coords[0], googleToken);
+    const imageUrl = place.image ?? await checkGoogleImage(place.coords[0], place.coords[1], googleToken);
 
+    console.log(place.coords + " location: " + place.name);
     const marker = new mapboxgl.Marker()
-      .setLngLat(place.coords as [number, number])
+      .setLngLat([place.coords[1], place.coords[0]] as [number, number])
       .setPopup(
-        new mapboxgl.Popup({ offset: 25, closeOnMove: true })
+        new mapboxgl.Popup({ offset: 25 })
           .setHTML(`
             <div class="container" style="background-color: rgb(188, 220, 252); border-radius: 2px; padding: 10px; max-width: 100%;">
               <b class="text-center d-block" style="font-size: 25px; font-weight: 600;">${place.name}</b>
@@ -56,12 +54,14 @@ export const focusOnMarker = (map: mapboxgl.Map, marker: mapboxgl.Marker, coords
   });
 
   map.flyTo({
-    center: coords,
+    center: [coords[1], coords[0]] as [number, number],
     zoom: 14,
     essential: true,
   });
 
-  marker.togglePopup();
+  if (marker.getPopup()?.isOpen() == false) {
+    marker.togglePopup();
+  }
 };
 
 interface NavigationButtonsProps {

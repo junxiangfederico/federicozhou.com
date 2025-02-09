@@ -28,7 +28,7 @@ const Location = () => {
     mapboxgl.accessToken = mapboxToken;
     const mapInstance = new mapboxgl.Map({
       container: "map",
-      style: "mapbox://styles/mapbox/dark-v11",
+      style: "mapbox://styles/mapbox/satellite-v9",
       center: [visitedPlaces[0].coords[1], visitedPlaces[0].coords[0]] as [number, number],
       pitch: 30,
       zoom: 5,
@@ -182,19 +182,43 @@ const Location = () => {
           borderRadius: "10px",
         }}
       >
-        <button onClick={() => { setMessage("Going to first place!"); goToFirst(); }}>
+        <button 
+           style={{ visibility: isButtonVisible ? "visible" : "hidden" }}
+          onClick={() => { setMessage("Going to first place!"); goToFirst(); }}>
           Go to first
         </button>
-        <button onClick={() => { setMessage("Moving back..."); moveBackward(); }}>
-          Back
+        <button 
+          onClick={() => { 
+            if (currentIndex > 0) {
+              setMessage("Moving back...");
+              moveBackward();
+            } else {
+              setMessage("Nothing before this, sorry!");
+            }
+          }}>
+          Previous One
         </button>
-        <button onClick={() => { setMessage("Moving forward..."); moveForward(); }}>
-          Forward
+
+        <button  
+          onClick={() => { 
+            if (currentIndex < visitedPlaces.length - 1) {
+              setMessage("Moving forward...");
+              moveForward();
+            } else {
+              setIsButtonVisible(true);
+              setMessage("Nothing more, sorry!");
+            }
+          }}>
+          Next One
         </button>
-        <button onClick={() => { setMessage("Going to last place!"); goToLast(); }}>
-          Go to last
+        <button 
+          //style={{ visibility: isButtonVisible ? "visible" : "hidden" }}
+          onClick={() => { setMessage("Going to last place!"); goToLast(); }}>
+          Go To Last
         </button>
-        <button onClick={() => {
+        <button 
+          style={{ visibility: isButtonVisible ? "visible" : "hidden" }}
+          onClick={() => {
           setIsEverythingVisibile((prev) => {
             const newState = !prev;
             setMessage("Toggling all popups !");
@@ -204,8 +228,10 @@ const Location = () => {
         }}>
           Toggle everything
         </button>
-        <button onClick={() => navigate("/")}>
-          Go back home
+        <button 
+          style={{ visibility: isButtonVisible ? "visible" : "hidden" }}
+          onClick={() => navigate("/ending")}>
+          Done !
         </button>
       </div>
     </div>

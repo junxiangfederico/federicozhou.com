@@ -24,6 +24,9 @@ import bogAmy2 from "/IMG_2759.JPG";
 import cake from "/IMG_2755.JPG";
 import tallinn from "/tallinn.jpg";
 import florence from "/florence.jpg";
+import bowl from "/IMG_7112.JPG";
+import duomo from "/duomo.JPG";
+import piadineria from "/piadineria.png"
 
 export const visitedPlaces = [
     // London
@@ -44,14 +47,14 @@ export const visitedPlaces = [
 
     // Milan
     { name: "Milan", description: "So little time, so many memories", coords: [45.46851227306399, 9.18231867514723] },
-    { name: "Piadineria", description: "Such a late lunch! Too much napping !", coords: [45.46592661024468, 9.194916339321914] },
+    { name: "Piadineria", description: "Such a late lunch! Too much napping !", coords: [45.46592661024468, 9.194916339321914], image: piadineria },
     { name: "An interesting dinner", description: "Presenting my beautiful girlfriend to my family", coords: [45.53067541354365, 9.193681618668291] },
     { name: "Dinner at mine", description: "Your first pizza and meeting my parents !", coords: [45.48562507412244, 9.23541177125278] },
     { name: "Chinese pop night", description: "Dancing and making out, you make me feel special", coords: [45.494560661087895, 9.181789643438304] },
-    { name: "Mi casa es tu casa", description: "You and the bowl, inseparable !", coords: [45.501988067873945, 9.180837671253277] },
+    { name: "Mi casa es tu casa", description: "You and the bowl, inseparable !", coords: [45.501988067873945, 9.180837671253277], image: bowl },
     { name: "At Gianluca's place", description: "Truck driving practice, ready for the test !", coords: [45.503328002650846, 9.181675140564263] },
     { name: "Wine and friends", description: "I hope your parents weren't too angry with you missing Christmas Eve!", coords: [45.48176794209704, 9.180858969906481] },
-    { name: "Duomo di Milano", description: "First time seeing your friends !", coords: [45.4641834446994, 9.192067522063187] },
+    { name: "Duomo di Milano", description: "First time seeing your friends !", coords: [45.4641834446994, 9.192067522063187], image: duomo },
     { name: "Stazione", description: "Goodbyes are so hard with you", coords: [45.484657178277885, 9.202562314824482] },
 
     // Florence

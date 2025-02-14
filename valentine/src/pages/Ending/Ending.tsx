@@ -12,20 +12,21 @@ export const Ending = () => {
                     <h1
                         style={{
                             fontFamily: 'cursive',
-                            fontSize: '4rem',
+                            fontSize: 'md',
                             color: '#ffffff',
                             textAlign: 'center',
                             fontWeight: 'bold',
-                            textShadow: '2px 2px 5px rgba(0, 0, 0, 0.3)'
+                            textShadow: '2px 2px 5px rgba(0, 0, 0, 0.3)',
+                            lineHeight: '2'
                         }}
                     >
-                        And that's a wrap - Have a lovely Valentine's Day Amy, Muaah ! 
+                        And that's a wrap <br></br>Have a lovely Valentine's Day Amy !
                     </h1>
                     <br></br>
                     <img
                     src={ending}
                     alt="Ending"
-                    width="80%"
+                    width="90%"
                     />
                     <br></br>
                     <button

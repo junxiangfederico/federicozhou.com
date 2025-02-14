@@ -31,11 +31,15 @@ export const createMarkers = async (map: mapboxgl.Map, visitedPlaces: any[], goo
         new mapboxgl.Popup({ offset: 25 })
           .setHTML(`
             <div class="container" style="background-color: rgb(188, 220, 252); border-radius: 2px; padding: 10px; max-width: 100%;">
-              <b class="text-center d-block" style="font-size: 25px; font-weight: 600;">${place.name}</b>
-              <br>
-              ${imageUrl ? `<img src="${imageUrl}" alt="${place.name}" style="width: 100%; height: auto; border-radius: 2px; margin-bottom: 5px;">` : ""}
-              <p class="text-center" style="font-size: 20px; line-height: 1.5;">${place.description}</p>
-            </div>
+            <b class="text-center d-block" style="font-size: 25px; font-weight: 600;">${place.name}</b>
+            <br>
+            ${imageUrl ? `
+              <div style="overflow: hidden; border-radius: 2px;">
+                <img src="${imageUrl}" alt="${place.name}" style="width: 100%; height: auto; border-radius: 2px; margin-bottom: 5px; transition: transform 0.3s ease;">
+              </div>
+            ` : ""}
+            <p class="text-center" style="font-size: 20px; line-height: 1.5;">${place.description}</p>
+          </div>
           `)
       )
       .addTo(map);
@@ -45,7 +49,6 @@ export const createMarkers = async (map: mapboxgl.Map, visitedPlaces: any[], goo
 
   return markers;
 };
-
 export const focusOnMarker = (map: mapboxgl.Map, marker: mapboxgl.Marker, coords: [number, number], markers: mapboxgl.Marker[]) => {
   markers.forEach((m) => {
     if (m !== marker && m.getPopup()?.isOpen()) {
@@ -59,7 +62,9 @@ export const focusOnMarker = (map: mapboxgl.Map, marker: mapboxgl.Marker, coords
     essential: true,
   });
 
-  if (marker.getPopup()?.isOpen() == false) {
+  const popup = marker.getPopup();
+  if (popup != null && marker.getPopup()?.isOpen() == false) {
+    popup.setOffset([0, -20]);
     marker.togglePopup();
   }
 };

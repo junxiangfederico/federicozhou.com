@@ -212,7 +212,7 @@ export const Location = () => {
           Next One
         </button>
         <button 
-          //style={{ visibility: isButtonVisible ? "visible" : "hidden" }}
+          style={{ visibility: isButtonVisible ? "visible" : "hidden" }}
           onClick={() => { setMessage("Going to last place!"); goToLast(); }}>
           Go To Last
         </button>

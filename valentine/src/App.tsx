@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import heart_cat from "../public/heart_cat.gif";
 import Ending from "./pages/Ending/Ending";
 import Location from "./pages/Location/Location";
+import { Angry } from "./pages/Angry/Angry";
 
 const loveMessages: string[] = [
   "I love you ❤️", "Ti amo 💕", "Je t’aime 💖", "Te quiero 💘",
@@ -15,9 +16,37 @@ const loveMessages: string[] = [
   "Ma armastan sind 💝"
 ];
 
+const copies: string[] = [
+  "No",
+  "Wrong button",
+  "Try again",
+  "Hey, what are you doing?",
+  "I think you are pressing the wrong one",
+  "Are you sure about that?",
+  "Oops, that's not an option!",
+  "Nice try, but no escape!",
+  "You're just playing hard to get, aren't you?",
+  "Denied! The other button is the right one",
+  "Not the right choice, try again 💕",
+  "Are you teasing me? 🥺",
+  "Pressing 'No' just makes me ask again!",
+  "Haha, funny joke! Now press 'Yes'!",
+  "You can't escape fate 😘",
+  "Aww, but I made this just for you!",
+  "What if I throw in chocolates? 🍫",
+  "Your finger keeps slipping, I get it",
+  "You don't want to see me sad, do you? 😢",
+  "The more you press, the more I fall for you 😍",
+  "If I say 'pretty please?', will that help? 🥰",
+  "Fiiiiiiiiineeeeee"
+];
+
 const Home = () => {
   const [index, setIndex] = useState<number>(0);
   const navigate = useNavigate();
+
+  const [copyIndex, setCopyIndex] = useState<number>(0);
+  const [text, setText] = useState<String>(copies[copyIndex]); 
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -54,13 +83,55 @@ const Home = () => {
           key={index}
         />
         <br />
-        <button
-          className="btn btn-primary mt-4"
-          onClick={() => navigate("/map")}
-          style={{ backgroundColor: 'white', borderColor: 'red', color: 'black', fontSize: '20px', fontFamily: 'Gill Sans' }}
-        >
-          Let's get started
-        </button>
+        <h1>Will you be my Valentine ?</h1>
+          <div style={{ 
+          position: "absolute", 
+          bottom: "20px", // Position at the bottom
+          left: "50%", // Center horizontally
+          transform: "translateX(-50%)", // Center horizontally
+          zIndex: 1,
+          display: "flex",
+          gap: "20px", // Space between buttons
+          }}>
+            <button
+              className="btn btn-primary mt-4"
+              onClick={() => navigate("/map")}
+              style={{ 
+                backgroundColor: 'white', 
+                borderColor: 'red', 
+                color: 'black', 
+                fontSize: '20px', 
+                fontFamily: 'Gill Sans',
+                width: '300px'
+              }}
+            >
+              Of course!
+            </button>
+
+            <button
+              className="btn btn-primary mt-4"
+              onClick={() => {
+                  if (copyIndex >= copies.length - 1) {
+                    navigate("/angry");
+                  } else {
+                    const newCopyIndex = copyIndex + 1;
+                    setCopyIndex(newCopyIndex);
+                    setText(copies[newCopyIndex]);
+                  }
+                }
+              }
+              style={{ 
+                backgroundColor: 'white', 
+                borderColor: 'red', 
+                color: 'black', 
+                fontSize: '20px', 
+                fontFamily: 'Gill Sans',
+                width: '100%'
+              }}
+            >
+              {text}
+            </button>
+        </div>
       </div>
     </div>
   );
@@ -73,6 +144,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/map" element={<Location />} />
         <Route path="/ending" element={<Ending />} />
+        <Route path="/angry" element={<Angry />} />
       </Routes>
     </Router>
   );
